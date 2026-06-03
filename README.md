@@ -37,14 +37,14 @@ To implement **KynosLib** within your development workspace, add the following b
 ```xml
 <repositories>
     <repository>
-        <id>kynos-repo</id>
-        <url>[https://repo.kynos.it/repository/maven-public/](https://repo.kynos.it/repository/maven-public/)</url>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
     </repository>
 </repositories>
 
 <dependencies>
     <dependency>
-        <groupId>it.kynos</groupId>
+        <groupId>com.github.KynosDeveloping</groupId>
         <artifactId>KynosLib</artifactId>
         <version>1.0.0</version>
         <scope>provided</scope>
