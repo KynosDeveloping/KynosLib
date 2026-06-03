@@ -2,6 +2,7 @@ package it.kynos.kynoslib.commands;
 
 import it.kynos.kynoslib.KynosLib;
 import it.kynos.kynoslib.menu.KynosLibGui;
+import it.kynos.kynoslib.utils.ColorUtils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -15,12 +16,12 @@ public class KynosLibCommand extends KynosCommand {
     protected boolean execute(CommandSender sender, String[] args) {
         final KynosLib pl = KynosLib.getInstance();
         final String version = pl.getDescription().getVersion();
-
-        sender.sendMessage(this.msg.get("Messages.KynosLibInfo.Separator"));
-        sender.sendMessage(this.msg.get("Messages.KynosLibInfo.Title"));
-        sender.sendMessage(this.msg.get("Messages.KynosLibInfo.Version", "{version}", version));
-        sender.sendMessage(this.msg.get("Messages.KynosLibInfo.Author"));
-        sender.sendMessage(this.msg.get("Messages.KynosLibInfo.Status"));
+        
+        sender.sendMessage(ColorUtils.translateToString("&7&m-----------------------------------"));
+        sender.sendMessage(ColorUtils.translateToString("&c&lKynosLib &7- System Core Framework"));
+        sender.sendMessage(ColorUtils.translateToString("&7Version: &e" + version));
+        sender.sendMessage(ColorUtils.translateToString("&7Author: &fKynos"));
+        sender.sendMessage(ColorUtils.translateToString("&7Status: &aActive &7and running."));
 
         if (sender.hasPermission("kynoslib.admin.gui")) {
             sender.sendMessage(this.msg.get("Messages.KynosLibInfo.HelpHint"));
