@@ -1,0 +1,80 @@
+# ============================================================
+#   KynosLib - Core Configuration
+#   All messages are configurable here.
+#   Supports & colors, &#RRGGBB hex, and placeholders {player}, {version}, {plugin}
+# ============================================================
+
+# ---------------------------------------------------------------
+# MODULES (Can be toggled in-game with /kynoslib gui)
+# ---------------------------------------------------------------
+Modules:
+  FileManager: true
+  GuiManager: true
+  PluginDisabler: true
+  PluginEnabler: true
+
+# ---------------------------------------------------------------
+# LISTENERS (Can be toggled in-game with /kynoslib gui)
+# ---------------------------------------------------------------
+Listeners:
+  PlayerJoin:
+    Enabled: true
+
+# ---------------------------------------------------------------
+# MESSAGES (ALL configurable, nothing hardcoded in the code)
+# ---------------------------------------------------------------
+Messages:
+
+  # Generic messages reusable by any child plugin
+  NoPermission:    "&cYou do not have permission to execute this command!"
+  PlayerOnly:      "&cThis command can only be executed by a player."
+  UnknownCommand:  "&cUnknown command. Use &e/{cmd} help &cfor a list."
+  ReloadSuccess:   "&7[KynosLib] &aConfiguration reloaded successfully!"
+  CooldownActive:  "&cPlease wait %.1fs before doing this again!"
+
+  # /kynoslib (no args) - version info
+  KynosLibInfo:
+    Separator: "&7&m-----------------------------------"
+    Title:     "&c&lKynosLib &7- System Core Framework"
+    Version:   "&7Version: &e{version}"
+    Author:    "&7Author: &fKynos"
+    Status:    "&7Status: &aActive &7and running."
+    HelpHint:  "&7Use &e/kynoslib help &7for admin commands."
+
+  # /kynoslib help
+  KynosLibHelp:
+    Separator:       "&7&m-----------------------------------"
+    Title:           "&c&lKynosLib &7- Available Commands:"
+    CmdInfo:         "&e/kynoslib             &7→ Version info"
+    CmdGui:          "&e/kynoslib gui         &7→ In-game module management"
+    CmdReload:       "&e/kynoslib reload      &7→ Reload the config"
+    CmdStopPlugin:   "&e/stopplugin <name>    &7→ Disable a plugin"
+
+  # /stopplugin
+  PluginDisabler:
+    Usage:    "&cUsage: /stopplugin <plugin_name>"
+    Self:     "&cYou cannot disable KynosLib itself!"
+    NotFound: "&cPlugin &e{plugin} &cnot found or already disabled."
+    Success:  "&aPlugin &e{plugin} &cdisabled successfully!"
+    Error:    "&cAn error occurred while disabling &e{plugin}&c. Check the console."
+
+  PluginEnabler:
+    Usage: "&cUsage: /startplugin <plugin_name>"
+    NotFound: "&cPlugin &e{plugin} &cnot found or already enabled."
+    Success: "&aPlugin &e{plugin} &cenabled successfully!"
+    Error: "&cAn error occurred while enabling &e{plugin}&c. Check the console."
+
+  # In-game GUI
+  GUI:
+    ConfigUpdated: "&7[KynosLib] &aConfiguration updated!"
+    ModuleToggled: "&7[KynosLib] &b{module} &7→ {state}"
+    StateEnabled:  "&aENABLED"
+    StateDisabled: "&cDISABLED"
+    sound: "UI_BUTTON_CLICK"
+    volume: 1.0
+    pitch: 1.0
+
+  # PlayerJoin Listener
+  Listeners:
+    PlayerJoinEvent:
+      message: "&f{player} &7joined the server!"

@@ -1,0 +1,48 @@
+name: KynosLib
+version: '2.0.0'
+main: it.kynos.kynoslib.KynosLib
+api-version: '1.21'
+load: POSTWORLD
+authors: [ Kynos ]
+description: "Core framework library for Kynos plugins."
+softdepend: [ PlaceholderAPI ]
+
+commands:
+  kynoslib:
+    description: "Comando principale di KynosLib (info, GUI, reload)."
+    usage: /kynoslib [gui|reload|help]
+    aliases: [ klib ]
+  stopplugin:
+    description: "Disabilita un plugin attivo in sicurezza."
+    permission: kynoslib.admin.stopplugin
+    usage: "§4Il comando è disabilitato"
+  startplugin:
+      description: "Attiva un plugin disattivato in sicurezza."
+      permission: kynoslib.admin.startplugin
+      usage: "§4Il comando è disabilitato"
+
+permissions:
+  kynoslib.admin:
+    description: "Accesso completo a tutti i comandi admin di KynosLib."
+    default: op
+    children:
+      kynoslib.admin.gui: true
+      kynoslib.admin.reload: true
+      kynoslib.admin.stopplugin: true
+      kynoslib.admin.startplugin: true
+
+  kynoslib.admin.gui:
+    description: "Permette di aprire la GUI di gestione moduli."
+    default: op
+
+  kynoslib.admin.reload:
+    description: "Permette di ricaricare il config con /kynoslib reload."
+    default: op
+
+  kynoslib.admin.stopplugin:
+    description: "Permette di disabilitare plugin con /stopplugin."
+    default: op
+  kynoslib.admin.startplugin:
+    description: "Permette di disabilitare plugin con /stopplugin."
+    default: op
+
