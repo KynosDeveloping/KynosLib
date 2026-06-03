@@ -1,7 +1,7 @@
 # 🚀 **KynosLib**
 
 A lightweight, ultra-optimized, and feature-rich **core framework** designed for Bukkit/Paper plugins. Fully built on **Java 21** and tightly integrated with the native **Paper/Adventure API**.
-
+# DOCUMENTATION: https://kynosdeveloping.gitbook.io/
 ---
 
 ## 🛠️ **Full Feature & Architecture Breakdown**
