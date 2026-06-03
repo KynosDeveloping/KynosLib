@@ -1,5 +1,5 @@
 name: KynosLib
-version: '2.0.0'
+version: '1.0.0'
 main: it.kynos.kynoslib.KynosLib
 api-version: '1.21'
 load: POSTWORLD
@@ -17,9 +17,9 @@ commands:
     permission: kynoslib.admin.stopplugin
     usage: "§4Il comando è disabilitato"
   startplugin:
-      description: "Attiva un plugin disattivato in sicurezza."
-      permission: kynoslib.admin.startplugin
-      usage: "§4Il comando è disabilitato"
+    description: "Attiva un plugin disattivato in sicurezza."
+    permission: kynoslib.admin.startplugin
+    usage: "§4Il comando è disabilitato"
 
 permissions:
   kynoslib.admin:
