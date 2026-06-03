@@ -16,7 +16,7 @@ public class KynosLibCommand extends KynosCommand {
     protected boolean execute(CommandSender sender, String[] args) {
         final KynosLib pl = KynosLib.getInstance();
         final String version = pl.getDescription().getVersion();
-        
+
         sender.sendMessage(ColorUtils.translateToString("&7&m-----------------------------------"));
         sender.sendMessage(ColorUtils.translateToString("&c&lKynosLib &7- System Core Framework"));
         sender.sendMessage(ColorUtils.translateToString("&7Version: &e" + version));

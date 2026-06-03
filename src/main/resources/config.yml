@@ -35,10 +35,6 @@ Messages:
   # /kynoslib (no args) - version info
   KynosLibInfo:
     Separator: "&7&m-----------------------------------"
-    Title:     "&c&lKynosLib &7- System Core Framework"
-    Version:   "&7Version: &e{version}"
-    Author:    "&7Author: &fKynos"
-    Status:    "&7Status: &aActive &7and running."
     HelpHint:  "&7Use &e/kynoslib help &7for admin commands."
 
   # /kynoslib help
