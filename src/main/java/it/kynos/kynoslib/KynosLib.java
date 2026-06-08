@@ -5,9 +5,11 @@ import it.kynos.kynoslib.commands.StartPluginCommand;
 import it.kynos.kynoslib.commands.StopPluginCommand;
 import it.kynos.kynoslib.listeners.CommandProtectionListener;
 import it.kynos.kynoslib.listeners.PlayerJoinListener;
+import it.kynos.kynoslib.listeners.UpdateJoinListener;
 import it.kynos.kynoslib.managers.ModuleManager;
 import it.kynos.kynoslib.menu.GuiListener;
 import it.kynos.kynoslib.utils.ColorUtils;
+import it.kynos.kynoslib.utils.GitHubUpdater;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class KynosLib extends JavaPlugin {
@@ -56,6 +58,15 @@ public final class KynosLib extends JavaPlugin {
 
         // Always-active listener for protection rules
         getServer().getPluginManager().registerEvents(new CommandProtectionListener(), this);
+        getServer().getPluginManager().registerEvents(new UpdateJoinListener(this), this);
+
+        new GitHubUpdater(this, "KynosDeveloping", "KynosLib").checkForUpdate().thenAccept(latestVersion -> {
+            if (latestVersion != null) {
+                getLogger().warning("A new update (v" + latestVersion + ") is available on GitHub!");
+            } else {
+                getLogger().info("KynosLib is up to date.");
+            }
+        });
 
         ColorUtils.log("§7[KynosLib] §aKynosLib v" + getDescription().getVersion() + " §7enabled successfully.");
     }

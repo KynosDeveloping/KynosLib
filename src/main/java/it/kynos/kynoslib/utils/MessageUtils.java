@@ -71,17 +71,22 @@ public class MessageUtils {
         final Player player = (sender instanceof Player p) ? p : null;
         sender.sendMessage(applyPlaceholders(raw, player, buildMap(placeholders)));
     }
-
     public final void sendNoPermission(final CommandSender sender) {
-        send(sender, "Messages.NoPermission");
+        // Assuming 'plugin' points to your main KynosLib instance or its file module wrapper
+        String msg = plugin.getConfig().getString("Messages.NoPermission", "&cYou do not have permission to execute this command!");
+        sender.sendMessage(ColorUtils.translateToString(msg));
     }
 
     public final void sendPlayerOnly(final CommandSender sender) {
-        send(sender, "Messages.PlayerOnly");
+        String msg = plugin.getConfig().getString("Messages.PlayerOnly", "&cThis command can only be executed by a player.");
+        sender.sendMessage(ColorUtils.translateToString(msg));
     }
 
     public final void sendUnknownCommand(final CommandSender sender, final String cmdName) {
-        send(sender, "Messages.UnknownCommand", "{cmd}", cmdName);
+        String msg = plugin.getConfig().getString("Messages.UnknownCommand", "&cUnknown command. Use &e/{cmd} help &cfor a list.");
+        // Process the dynamic syntax parameter placeholder before translating colors
+        String formatted = msg.replace("{cmd}", cmdName);
+        sender.sendMessage(ColorUtils.translateToString(formatted));
     }
 
     private String applyPlaceholders(String text, final Player player, final Map<String, String> vars) {
